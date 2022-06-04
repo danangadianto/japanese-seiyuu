@@ -2,11 +2,11 @@
 session_start();
 
 if( !isset($_SESSION["login"]) ) {
-    header("Location: ../regis-login/login.php");
+    header("Location: regis-login/login.php");
     exit;
 }
 
-require '../functions/functions.php';
+require 'functions/functions.php';
 
 $seiyuu = query("SELECT * FROM seiyuu LIMIT $firstData, $totalDataPerPage");
 
@@ -35,13 +35,13 @@ if( isset($_POST["search"]) ) {
 </head>
 
 <body>
-    <a href="../regis-login/logout.php">Sign out</a>
+    <a href="regis-login/logout.php">Sign out</a>
 
     <div class="container mt-5">
 
         <h1>Japanese Seiyuu</h1>
         <!-- insert -->
-        <a href="../features/insert.php">Add New Seiyuu</a>
+        <a href="features/insert.php">Add New Seiyuu</a>
 
         <!-- searchbar -->
         <form action="" method="POST">
@@ -68,13 +68,13 @@ if( isset($_POST["search"]) ) {
                     <tbody>
                         <tr>
                             <td><?= $num++ ?></td>
-                            <td><img src="../img/<?= $va["picture"]; ?>" width="85px"></td>
+                            <td><img src="img/<?= $va["picture"]; ?>" width="85px"></td>
                             <td><?= $va["name"]; ?></td>
                             <td><?= $va["date"]; ?></td>
                             <td><?= $va["prefecture"]; ?></td>
                             <td>
-                                <a href="../features/update.php?id=<?= $va["id"] ?>">Update</a> |
-                                <a href="../features/delete.php?id=<?= $va["id"]; ?>" onclick="return confirm('Are You Sure?'); ">Delete</a>
+                                <a href="features/update.php?id=<?= $va["id"] ?>">Update</a> |
+                                <a href="features/delete.php?id=<?= $va["id"]; ?>" onclick="return confirm('Are You Sure?'); ">Delete</a>
                             </td>
                         </tr>
                     </tbody>
@@ -108,8 +108,8 @@ if( isset($_POST["search"]) ) {
 
     </div>
 
-<script src="../js/jquery-3.6.0.min.js"></script>
-<script src="../js/script.js"></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 </html>

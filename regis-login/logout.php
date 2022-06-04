@@ -14,7 +14,7 @@ setcookie('id', '', time()-3600);
 setcookie('key', '', time()-3600);
 
 
-header("Location: ../regis-login/login.php");
+header("Location: login.php");
 exit;
 
 

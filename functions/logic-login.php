@@ -16,7 +16,7 @@ if( isset($_COOKIE["id"]) && isset($_COOKIE["key"]) ) {
 }
 
 if( isset($_SESSION["login"]) ) {
-    header("Location: ../content/index.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -44,7 +44,7 @@ if( isset($_POST["submit"]) ) {
                 setcookie('key', hash('sha256', $row['username']), time()+60*60*24*14);
             }
 
-            header("Location: ../content/index.php");
+            header("Location: ../index.php");
             exit;
         }
 
